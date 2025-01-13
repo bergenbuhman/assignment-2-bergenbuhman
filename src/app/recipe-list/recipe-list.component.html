@@ -1,0 +1,21 @@
+<div>
+    <button (click)="toggleFilter()">
+        {{ filterVegetarian ? 'Show All' : 'Show Vegetarian Only' }}
+    </button>
+    <button (click)="addRecipe()">Add Recipe</button>
+</div>
+
+<ul>
+    <li *ngFor="let recipe of recipes">
+        <div *ngIf="!filterVegetarian || recipe.vegetarian">
+            <h3>{{ recipe.name }}</h3>
+            <p><strong>Ingredients:</strong> {{ recipe.ingredients.join(', ') }}</p>
+            <p><strong>Steps:</strong> {{ recipe.steps.join(', ') }}</p>
+            <p><strong>Created At:</strong> {{ recipe.createdAt | dateFormat }}</p>
+            <p>
+                <strong>Type:</strong> {{ recipe.vegetarian ? 'Vegetarian' : 'Non-Vegetarian' }}
+            </p>
+            <button (click)="deleteRecipe(recipe.id)">Delete</button>
+        </div>
+    </li>
+</ul>
