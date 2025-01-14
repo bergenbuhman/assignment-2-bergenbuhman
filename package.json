@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.3.11",
+    "@angular/compiler-cli": "^17.3.12",
+    "@angular/core": "latest",
+    "@angular/platform-browser": "latest",
+    "@angular/router": "latest",
+    "ng-packagr": "^17.3.0",
+    "typescript": "~5.4.2"
+  },
+  "name": "assignment-2-bergenbuhman",
+  "version": "1.0.0",
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "dependencies": {
+    "@angular/common": "^19.0.6",
+    "@angular/compiler": "^19.0.6",
+    "@angular/forms": "^19.0.6",
+    "tslib": "^2.3.0",
+    "zone.js": "^0.15.0"
+  },
+  "license": "ISC"
+}

@@ -1,13 +1,13 @@
 <div>
     <button (click)="toggleFilter()">
-        {{ filterVegetarian ? 'Show All' : 'Show Vegetarian Only' }}
+        {{ showVegetarianOnly ? 'Show All Recipes' : 'Show Vegetarian Only' }}
     </button>
     <button (click)="addRecipe()">Add Recipe</button>
 </div>
 
 <ul>
-    <li *ngFor="let recipe of recipes">
-        <div *ngIf="!filterVegetarian || recipe.vegetarian">
+    <li *ngFor="let recipe of filteredRecipes">
+        <div>
             <h3>{{ recipe.name }}</h3>
             <p><strong>Ingredients:</strong> {{ recipe.ingredients.join(', ') }}</p>
             <p><strong>Steps:</strong> {{ recipe.steps.join(', ') }}</p>
@@ -19,3 +19,4 @@
         </div>
     </li>
 </ul>
+<p class="debug-output">{{ debugOutput }}</p>

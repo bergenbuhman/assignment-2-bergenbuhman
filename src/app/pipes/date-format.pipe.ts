@@ -2,14 +2,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'dateFormat',
+  standalone: true,
 })
 export class DateFormatPipe implements PipeTransform {
-  transform(value: Date): string {
-    const options: Intl.DateTimeFormatOptions = {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
-    };
-    return new Intl.DateTimeFormat('en-US', options).format(value);
+  transform(value: Date, format: string = 'MMM d, y'): string {
+    if (!(value instanceof Date)) {
+      return '';
+    }
+    return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(
+      value
+    );
   }
 }
